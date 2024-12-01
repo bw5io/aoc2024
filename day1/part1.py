@@ -25,12 +25,12 @@ def file_init(file_name):
     list_a, list_b = split_into_two_libs(input_list)
     return list_a, list_b
 
-def calculate_similarty(counter_a: Counter, counter_b: Counter):
-    similarty_score = 0
+def calculate_similarity(counter_a: Counter, counter_b: Counter):
+    similarity_score = 0
     for i in counter_a.keys():
         if i in counter_b.keys():
-            similarty_score += i*counter_a[i]*counter_b[i]
-    return similarty_score
+            similarity_score += i*counter_a[i]*counter_b[i]
+    return similarity_score
 
 def solution_1(file_name):
     list_a, list_b = file_init(file_name)
@@ -43,6 +43,6 @@ def solution_2(file_name):
     counter_a = Counter(list_a)
     counter_b = Counter(list_b)
     print(counter_a, counter_b)
-    return calculate_similarty(counter_a, counter_b)
+    return calculate_similarity(counter_a, counter_b)
 
 print(solution_2("day1/input.txt"))
